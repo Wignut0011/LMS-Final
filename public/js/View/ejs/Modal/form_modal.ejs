@@ -1,0 +1,93 @@
+<% if(formType == "edit"){ %>
+  
+
+  <div class="modal-dialog modal-lg modal-dialog-centered"form-type="edit">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img class="img-fluid rounded-circle form-pic modal-pic" src='<%=view.TeamLogo%>' width="50" height="50">
+        <h5 class="modal-title w-100">Edit <%=view.TeamName%></h5>
+        
+<% } else{ %>
+  
+  <div class="modal-dialog modal-lg modal-dialog-centered"form-type="add">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="fa-solid fa-circle-plus form-icon"></i>
+        <img class="img-fluid rounded-circle modal-pic form-pic" src='<%=viewModel.defaultTeamLogo%>' width="50" height="50" style="display:none">
+        <h5 class="modal-title w-100">Add New Team</h5>
+        
+<% } %>
+        
+        <button type="button" class="btn-close form-close" data-bs-dismiss="modal"></button>
+      </div>
+      
+      <div class="modal-body form-body">
+        <form class="needs-validation" id="modalForm" novalidate>
+
+          <div class="container">
+            <div class="row mb-4">
+              
+            <% viewModel.fields.forEach(function(inp){ %>
+              <%if(inp.form == formType || inp.form == "both"){%>
+
+                
+              <% if(inp.newLine){ %>
+                  </div>
+                  <div class="row">
+                <% } %>
+                <div class="<%=inp.colLength%> mb-4">
+
+                  <%if(inp.hidden == true) {%>
+                  <div class="form-group" hidden>
+                  <%}else{%>
+                  <div class="form-group">
+                  <%}%>
+                    
+                    <label class="form-label" for="<%=inp.id%>"><%=inp.label%></label>
+                    <<%=inp.tag%> 
+                              <% inp.attributes.forEach(function(attr){ %>
+                                 <%=attr[0]%>="<%=attr[1]%>"
+                              <% }) %>
+                              <% if(inp.validate.required && formType == "edit"){%>
+                                value = "<%=view[inp.name]%>" required
+                              <%}else if(inp.validate.required && formType == "add"){%>
+                                required
+                              <%}%>
+                    >
+                      
+                    <% if(inp.tag === "select"){ %>
+                      <% if(formType == "add") {%>
+                        <option selected disabled value="">Sel</option>
+                      <%}else if(formType == "edit"){%>
+                        <option disabled value="">Sel</option>
+                       <%}%>
+                      <%states.forEach(function(opt, ind){ %>
+                        <%if(formType == "edit" && view.State === opt.State){%>
+                          <option selected value="<%=opt.State%>"><%=opt.StateName%></option>
+                        <%}else{%>
+                          <option value="<%=opt.State%>"><%=opt.StateName%></option>
+                        <%}%>
+                      <%})%>
+                    </<%=inp.tag%>>
+                    <%}%>
+                    <%if(inp.validate.required){%>
+                        <div class="invalid-feedback"><%=inp.validate.message%></div>
+                      <%}%>
+                  </div>
+                </div>
+
+                        
+              <% } %>
+              <% }) %>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn super-btn-no form-close" id="form-cancel-button" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn super-btn" id="form-add-button">Save</button>
+      </div>
+    </div>
+  </div>

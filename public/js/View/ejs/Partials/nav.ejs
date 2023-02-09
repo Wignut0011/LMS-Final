@@ -1,0 +1,28 @@
+<!---------------CONTENT TAB----------------->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container" id="header">
+        <div class="navbar-header" id="logo-banner">
+          <div class="navbar-brand">
+            <img class="img-fluid" id="logo-img" src="img/baseball.svg" alt="Logo"> Superbase
+          </div>
+        </div>
+        <button class="navbar-toggler align-self-center" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+          <span class="navbar-toggler-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="30" height="30"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g transform="translate(0.516,0.516) scale(0.994,0.994)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g fill="#ffffff" stroke="#cccccc" stroke-linejoin="round"><path d="M21.5,35.83333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333c0,7.88333 -6.45,14.33333 -14.33333,14.33333h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333z"></path><path d="M150.5,86c0,7.88333 -6.45,14.33333 -14.33333,14.33333h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333z"></path><path d="M150.5,136.16667c0,7.88333 -6.45,14.33333 -14.33333,14.33333h-100.33333c-7.88333,0 -14.33333,-6.45 -14.33333,-14.33333c0,-7.88333 6.45,-14.33333 14.33333,-14.33333h100.33333c7.88333,0 14.33333,6.45 14.33333,14.33333z"></path></g><path d="M0,172v-172h172v172z" fill="none" stroke="none" stroke-linejoin="miter"></path><g fill="#ffffff" stroke="none" stroke-linejoin="miter"><path d="M35.83333,50.16667h14.33333h86c7.88333,0 14.33333,-6.45 14.33333,-14.33333c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333h-86h-14.33333c-7.88333,0 -14.33333,6.45 -14.33333,14.33333c0,7.88333 6.45,14.33333 14.33333,14.33333z"></path><path d="M136.16667,71.66667h-21.5h-78.83333c-7.88333,0 -14.33333,6.45 -14.33333,14.33333c0,7.88333 6.45,14.33333 14.33333,14.33333h78.83333h21.5c7.88333,0 14.33333,-6.45 14.33333,-14.33333c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333z"></path><path d="M136.16667,121.83333h-43h-57.33333c-7.88333,0 -14.33333,6.45 -14.33333,14.33333c0,7.88333 6.45,14.33333 14.33333,14.33333h57.33333h43c7.88333,0 14.33333,-6.45 14.33333,-14.33333c0,-7.88333 -6.45,-14.33333 -14.33333,-14.33333z"></path></g><path d="" fill="none" stroke="none" stroke-linejoin="miter"></path></g></g></svg>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="nav-menu">
+        <ul class="nav nav-tabs" role="tablist">
+
+<!--          Implement each route tab-->
+          <%routes.forEach((route)=>{%>
+            <li class="nav-item>" role="presentation"><a class="nav-link <%if(route.defaultView){%>active<%}%>" id="<%=route.name%>_tab" href="#<%=route.id%>"><%=route.title%></a></li>
+          <%})%>
+
+        </ul>
+        </div>
+      </div>
+    </nav>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <title>Superbase Legue</title>    
+    <link rel="icon" href="img/head_icon.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/ejs@3.1.6/ejs.min.js"></script>
+    <script src="https://kit.fontawesome.com/c6e6b4e489.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body>
+    <!---------------Header Nav----------------->
+    <section id="page_header">
+    </section>
+
+    
+<!---------------PAGE ASIDE (SIDEBAR)----------------->    
+    <section id=" page_sidebar">
+      <aside>
+        <button class="btn aside-btn top-50" type="button" onclick="ShowPanel()" aria-hidden="true" aria-expanded="false">
+          <i class="fa-solid fa-angles-right rounded-circle"></i>
+        </button>
+        <div class="sidepanel top-25" id="sidebar-content">
+          <button class="btn aside-close" type="button" onclick="HidePanel()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="aside-contents">
+            <h3 class="text-white text-center">UPCOMING DATES</h3>
+            <table class="table table-aside base-container">
+              <thead>                  
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <th>FL vs UT</th>
+                  <th>4/14</th>
+                </tr>
+                  <tr>
+                    <th>WI vs NE</th>
+                    <th>4/18</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>NV vs MS</th>
+                    <th>4/21</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>CA vs NY</th>
+                    <th>5/9</th>
+                  </tr>
+                  
+                  <tr>
+                    <th>ID vs SD</th>
+                    <th>5/10</th>
+                  </tr>
+                  <tr>
+                    <th>ND vs NC</th>
+                    <th>5/11</th>
+                  </tr>
+                  <tr>
+                    <th>OH vs MN</th>
+                    <th>5/12</th>
+                  </tr>
+                  <tr>
+                    <th>TN vs OK</th>
+                    <th>12/19</th>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+        </div>
+      </aside>
+    </section>
+
+<!---------------TAB CONTENT----------------->
+
+
+    <section id="page_content">
+      <div class="tab-content" id="main-page">
+      </div>
+    </section>
+    <div class="spinner" id="content_spinner">
+      <img src="img/head_icon.png" class="img-spin">
+    </div>
+
+<!-----------------FOOTER----------------->
+    <section id="page_footer">
+      <div class="container-fluid bg-black div-pad" id="footer">
+        <div class="container">
+          <footer class="row row-cols-auto flex-nowrap text-muted justify-content-between">
+            <div class="col border-end"><small>© Someone 2022</small></div>
+            <div class="col flex-wrap">
+            <div class="row row-cols-auto flex-wrap">            
+              <div class="col"><a href="/" class="text-muted">privacy</a></div>
+              <div class="col"><a href="https://www.youtube.com/watch?v=QKLaCptPpoo" class="text-muted">about</a></div>
+              <div class="col"><a href="https://www.youtube.com/watch?v=dpgGxi94tsw" class="text-muted">contact</a></div>
+            </div>
+            </div>
+          </footer>
+        </div>
+      </div> 
+    </section>
+  <div class="modal fade super-modal" id="teamModal" aria-hidden="true" style="display: none">
+    
+  </div>
+    
+<!-- ** Generic Unsaved Work Warning Modal ** -->
+
+  <div class="modal fade super-modal" id="unsavedModal" aria-hidden="true" style="display: none">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title w-100">Are You Sure?</h5>
+      
+          <button type="button" class="btn-close form-close" data-bs-dismiss="modal"></button>
+        </div>
+      
+        <div class="modal-body text-center">          
+          Are you sure you want to exit? You have unsaved work. Some may see this as a sign of weakness.<br>I don't.<br>But at the end of the day, it's your call.<br>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn super-btn-no" id="change-close-button" data-bs-dismiss="modal">Close Without Saving</button>
+          <button type="button" class="btn super-btn" id="change-continue-button" data-bs-dismiss="modal">Finish What You Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+  <!--------------Scripts----------------->    
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
