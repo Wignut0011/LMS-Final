@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wignut0011/LMS_DanEsp.git"
+    "url": "git+https://github.com/Wignut0011/LMS-Final.git"
   },
   "keywords": [],
   "author": "Daniel Espinel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Wignut0011/LMS_DanEsp/issues"
+    "url": "https://github.com/Wignut0011/LMS-Final/issues"
   },
-  "homepage": "https://github.com/Wignut0011/LMS_DanEsp#readme",
+  "homepage": "https://github.com/Wignut0011/LMS-Final#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
